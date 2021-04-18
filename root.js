@@ -1,13 +1,14 @@
 // load the ecmascript when all content is loaded
 document.addEventListener('DOMContentLoaded', () => {
 
-    //initialize the date. give the starting date of ramadan
-    let countDate = new Date('April 14, 2021 00:00:00:00').getTime()
+    // initialize the date. give the starting date of ramadan
+    // let ramadan_countDate = new Date('April 14, 2021 00:00:00:00').getTime();
+    // date will initialize and inject form html file
 
         // after getting the deadline of ramadan, we need to get the time what goes right now.
-        ramadan = () => {
+        init_count = (deadline) => {
             let now = new Date().getTime();
-            gap = countDate - now;
+            gap = deadline - now;
 
             let second = 1000,
                 minute = second * 60,
@@ -33,7 +34,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }*/
 
         // all this function everysecond, basically counting the seconds
-        setInterval(() => { ramadan(); }, 1000);
+        setInterval(() => { init_count(ramadan_countDate); }, 1000);
+        setInterval(() => { init_count(eidulfiter_countDate); }, 1000);
 
         document.querySelector('#openpopup').addEventListener('click', () => {
             document.querySelector('.popup').classList.add('active');

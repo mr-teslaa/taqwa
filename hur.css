@@ -1,15 +1,25 @@
 :root {
+    /* neumorphism */
     --neumorphic-bg: #eff0f4;
     --dark-heavy-green: #004044;
     --dark-heavy-purple: #373651;
 
-    --border-radius-basic: 1.5rem;
+    --border-radius-basic: 0.5rem;
     --outer-shadow: 3px 3px 3px #d0d0d0,
                     -3px -3px 3px #f8f8f8;
     --outer-shadow-0: 0 0 0 #d0d0d0,
                     0 0 0 #f8f8f8;
     --inner-shadow: inset 3px 3px 3px #d0d0d0,
                     inset -3px -3px 3px #f8f8f8;
+
+
+    /* glassmorphism
+    --glassmorphism-bg: linear-gradient(to right top, #65dfc9, #6cdbeb);*/
+    --glassmorphism-bg: #161623;
+    --glassmorphism-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5),
+                            -1px -1px 2px #aaa,
+                            1px 1px 2px #555;
+
 }
 
 * {
@@ -21,9 +31,21 @@
 body {
     height: 100vh;
     font-family: 'Poppins', 'Montserrat', sans-serif, arial;
-    background: var(--neumorphic-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow-x: hidden;
     overflow-y: hidden;
+}
+
+.neumorphism-bg {
+    background: var(--neumorphic-bg);
+}
+
+.glass-bg {
+    background: url('https://www.hackthebox.eu/images/landing/landing-pattern.png');
+    height: 100%;
+    width: 100%;
 }
 
 header {
@@ -43,14 +65,23 @@ a {
  }
 
 .title {
-    color: var(--dark-heavy-green);
     font-family: 'Montserrat', sans-serif;
     display: block;
     text-align: center;
     font-size: 1.2rem;
     font-weight: 900;
     margin: 2rem 0;
+}
+
+.neumorphism-bg .title {
+    color: var(--dark-heavy-green);
     text-shadow: var(--outer-shadow);
+}
+
+.glass-bg .title {
+    color: #fff;
+    font-size: 2.5rem;
+    font-weight: 900;
 }
 
 .card-title {
@@ -58,8 +89,16 @@ a {
     text-transform: uppercase;
     font-size: 0.9rem;
     font-weight: 700;
+}
+
+.neumorphism-bg .card-title {
     color: var(--dark-heavy-purple);
     text-shadow: var(--outer-shadow);
+}
+
+.glass-bg .card-title {
+    margin-top: 1rem;
+    color: #a5b1c2;
 }
 
 .countdown {
@@ -75,7 +114,6 @@ a {
 }
 
 .countdown h3 {
-    color: var(--dark-heavy-purple);
     margin: auto;
     height: 4rem;
     width: 4rem;
@@ -84,6 +122,12 @@ a {
     justify-content: center;
     align-items: center;
     border-radius: var(--border-radius-basic);
+}
+
+
+.neumorphism-bg .countdown h3 {
+    color: var(--dark-heavy-purple);
+
     text-shadow: var(--outer-shadow);
     box-shadow: var(--inner-shadow);
 }
@@ -133,6 +177,31 @@ button {
     margin: 0.5rem;
     padding: 0.5rem 1rem;
     border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.glass-bg .button {
+    background:  #f0f;
+    color: var(--glassmorphism-bg);
+    border: 1px solid transparent;
+    transition: all 0.4s ease-in-out;
+}
+
+.glass-bg .button:hover {
+    background:  transparent;
+    border: 1px solid #f0f;
+    color: #f0f;
+}
+
+.glass-bg p {
+    color: #dfe4ea;
+}
+
+.neumorphism-bg .button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
     color: var(--dark-heavy-green);
     font-size: 1rem;
     font-weight: 600;
@@ -140,12 +209,16 @@ button {
     transition: all 1s ease-in-out;
 }
 
-.button:hover {
+.neumorphism-bg .button:hover {
     box-shadow: var(--inner-shadow);
     cursor: pointer;
 }
 
 .popup {
+    display: none;
+}
+
+.neumorphism-bg .popup {
     border: 1px solid red;
     height: 100vh;
     width: 100vw;
@@ -186,15 +259,24 @@ button {
     transition: all 300ms ease-in-out 400ms !important;
 }
 
-.blur {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width: 100vw;
-    background: rgba(255,255,255,0.5);
-    backdrop-filter: blur(10px);
+/* glassmorphism design */
+.glass-bg h1 {
+
 }
+
+.glass-bg .cards h3 {
+    /*background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1));*/
+    color: #778ca3;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-right: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+    cursor: pointer;
+}
+
+
+
 
 @media screen and (min-width: 768px) {
     .title {

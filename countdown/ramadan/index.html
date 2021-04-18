@@ -6,20 +6,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title> Ramadan Countdown 2021 </title>
+    <title> Ramadan Countdown 2022 </title>
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./hur.css" />
-    <script src="./root.js"></script>
+    <link rel="stylesheet" href="./../../hur.css" />
+    <script src="./../../root.js"></script>
 </head>
 
-<body>
+<body class="neumorphism-bg">
 
     <main>
 
         <section>
-            <h1 class="title"> Ramadan Countdown 2021 </h1>
+            <h1 class="title"> Ramadan Countdown 2022 </h1>
             <div class="countdown">
                 <div class="cards">
                     <h3 id="day"> N/A </h3>
@@ -75,6 +75,11 @@
 
     </main>
 
+
+    <script>
+        let ramadan_countDate = new Date('April 03, 2022 00:00:00:00').getTime();
+        init_count(ramadan_countDate)
+    </script>
 
 </body>
 

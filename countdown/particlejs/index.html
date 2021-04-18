@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Particles Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./../../hur.css" />
+    <script src="./../../root.js"></script>
+
+    <style>
+
+        main {
+            position: absolute;
+            top: 0;
+        }
+
+    </style>
+
+</head>
+
+<body class="glass-bg" id="particles-js">
+
+    <main>
+
+        <section>
+            <h1 class="title"> Ramadan Countdown 2021 </h1>
+            <div class="countdown">
+                <div class="cards">
+                    <h3 id="day"> N/A </h3>
+                    <p class="card-title"> day </p>
+                </div>
+                <div class="cards">
+                    <h3 id="hour"> N/A </h3>
+                    <p class="card-title"> hour </p>
+                </div>
+                <div class="cards">
+                    <h3 id="minute"> N/A </h3>
+                    <p class="card-title"> minute </p>
+                </div>
+                <div class="cards">
+                    <h3 id="second"> N/A </h3>
+                    <p class="card-title"> second </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="text-center mt2">
+            <a href="#" class="button" id="openpopup"> Is this is actual time of RAMADAN? </a>
+            <div class="popup">
+                <p>
+                    Ramadan Countdown 2021 has started as days are approaching near Muslim brother and sisters are gearing up for this holy season.
+                </p>
+                <p>
+                    Ramadan 2021 is expected to begin on Tuesday, April 13, 2021 (according to Saudi Arabia) and will end on Wednesday, May 12, 2021.
+                    Eid al Fitr 2021 is expected to be celebrated on Thursday, May 13, 2021. This is the tentative date as the actual date of
+                    commencement of Ramadan 2021 is subject to the sighting of the moon.
+                </p>
+                <p class="button mt3-imp" id="closepopup"> close </p>
+            </div>
+        </section>
+
+        <section>
+
+            <div class="mt2">
+                <p class="text-center"> Created by Hossain Foysal </p>
+                <ul class="mt2">
+                    <li>
+                        <p class="text-center">Hire or send e-mail him</p>
+                    </li>
+                    <li class="flexbox">
+                        <a href="https://fiverr.com/emon__hossain" target="_new" class="button"> Fiverr </a>
+                        <a href="https://freelancer.com/u/tesla35" target="_new" class="button"> freelancer </a>
+                        <p href="#" class="button" style="background: #f0f !important; color: #161623 !important; cursor: text"> mr.teslaa@protonmail.com </p>
+                    </li>
+                </ul>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="./../../tilt.js"></script>
+    <script>
+        VanillaTilt.init(document.querySelectorAll(".cards h3"), {
+            max: 25,
+            speed: 400,
+            glare: true,
+            "max-glare": 1
+        });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script>
+        particlesJS.load('particles-js', 'particles.json', function(){
+          console.log('particles.json loaded...');
+        });
+    </script>
+
+    <script>
+        let eidulfiter_countDate = new Date('May 13, 2021 00:00:00:00').getTime();
+        init_count(eidulfiter_countDate)
+    </script>
+
+</body>
+
+</html>
