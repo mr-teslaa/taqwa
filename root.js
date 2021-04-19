@@ -33,16 +33,4 @@ document.addEventListener('DOMContentLoaded', () => {
             return (parseInt(n, 10) < 10 ? '0' : '') + n;
         }*/
 
-        // all this function everysecond, basically counting the seconds
-        setInterval(() => { init_count(ramadan_countDate); }, 1000);
-        setInterval(() => { init_count(eidulfiter_countDate); }, 1000);
-
-        document.querySelector('#openpopup').addEventListener('click', () => {
-            document.querySelector('.popup').classList.add('active');
-        })
-
-        document.querySelector('#closepopup').addEventListener('click', () => {
-            //blur.classList.remove('blur');
-            document.querySelector('.popup').classList.remove('active');
-        })
 })

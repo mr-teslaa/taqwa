@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./../../hur.css" />
-    <script src="./../../root.js"></script>
 
     <style>
 
@@ -26,7 +25,7 @@
     <main>
 
         <section>
-            <h1 class="title"> Ramadan Countdown 2021 </h1>
+            <h1 class="title"> Eid-ul Fitr Countdown 2021 </h1>
             <div class="countdown">
                 <div class="cards">
                     <h3 id="day"> N/A </h3>
@@ -47,18 +46,15 @@
             </div>
         </section>
 
-        <section class="text-center mt2">
-            <a href="#" class="button" id="openpopup"> Is this is actual time of RAMADAN? </a>
+        <section class="text-center mt2" style="">
+            <a href="#" class="button" id="openpopup"> Is this is actual time of Eid-ul Fitr? </a>
             <div class="popup">
                 <p>
-                    Ramadan Countdown 2021 has started as days are approaching near Muslim brother and sisters are gearing up for this holy season.
-                </p>
-                <p>
-                    Ramadan 2021 is expected to begin on Tuesday, April 13, 2021 (according to Saudi Arabia) and will end on Wednesday, May 12, 2021.
+                    Eid-ul Fitr 2021 is expected to begin on Thursday, May 13, 2021 (according to Saudi Arabia).
                     Eid al Fitr 2021 is expected to be celebrated on Thursday, May 13, 2021. This is the tentative date as the actual date of
-                    commencement of Ramadan 2021 is subject to the sighting of the moon.
+                    commencement of Eid-ul Fitr 2021 is subject to the sighting of the moon.
                 </p>
-                <p class="button mt3-imp" id="closepopup"> close </p>
+                <p class="button mt3-imp" id="closepopup" style="cursor: pointer;"> close </p>
             </div>
         </section>
 
@@ -102,7 +98,41 @@
 
     <script>
         let eidulfiter_countDate = new Date('May 13, 2021 00:00:00:00').getTime();
-        init_count(eidulfiter_countDate)
+
+        let init_count = (eidulfiter_countDate) => {
+            let now = new Date().getTime();
+            gap = eidulfiter_countDate - now;
+
+            let second = 1000,
+                minute = second * 60,
+                hour = minute * 60,
+                day = hour * 24;
+
+            // calculate the time
+            let d = Math.floor( gap/(day) ),
+                h = Math.floor( (gap%(day)) / (hour) ),
+                m = Math.floor( (gap%(hour)) / (minute)),
+                s = Math.floor( (gap%(minute)) / second );
+
+            // inject the value in DOM
+            document.querySelector('#day').innerHTML = d;
+            document.querySelector('#hour').innerHTML = h;
+            document.querySelector('#minute').innerHTML = m;
+            document.querySelector('#second').innerHTML = s;
+        }
+
+        // call this function everysecond, basically counting the seconds
+        setInterval(() => { init_count(eidulfiter_countDate); }, 1000);
+
+        document.querySelector('#openpopup').addEventListener('click', () => {
+            document.querySelector('.popup').classList.add('active');
+        })
+
+
+        document.querySelector('#closepopup').addEventListener('click', () => {
+            console.log("closing");
+            document.querySelector('.popup').classList.remove('active');
+        })
     </script>
 
 </body>

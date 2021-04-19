@@ -68,7 +68,7 @@ a {
     font-family: 'Montserrat', sans-serif;
     display: block;
     text-align: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 900;
     margin: 2rem 0;
 }
@@ -80,7 +80,7 @@ a {
 
 .glass-bg .title {
     color: #fff;
-    font-size: 2.5rem;
+    font-size: 1rem;
     font-weight: 900;
 }
 
@@ -215,23 +215,24 @@ button {
 }
 
 .popup {
-    display: none;
-}
-
-.neumorphism-bg .popup {
-    border: 1px solid red;
+    visibility: hidden;
     height: 100vh;
     width: 100vw;
     padding: 80px 20px;
-    opacity: 1;
+    opacity: 0;
     z-index: 200;
     position: absolute;
-    top: -200%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(0.5);
     transition: opacity 300ms ease-in-out,
                 top 1000ms ease-in-out,
                 transform 1000ms ease-in-out;
+    backdrop-filter: blur(50px);
+}
+
+.neumorphism-bg .popup {
+    border: 2px solid var(--dark-heavy-purple);;
     background: var(--neumorphic-bg);
 }
 
@@ -242,6 +243,7 @@ button {
 }
 
 .popup.active {
+    visibility: visible;
     opacity: 1;
     top: 50%;
     transform: translate(-50%, -50%) scale(1);
@@ -260,9 +262,6 @@ button {
 }
 
 /* glassmorphism design */
-.glass-bg h1 {
-
-}
 
 .glass-bg .cards h3 {
     /*background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1));*/
@@ -281,6 +280,10 @@ button {
 @media screen and (min-width: 768px) {
     .title {
         font-size: 2rem;
+    }
+
+    .glass-bg .title {
+        font-size: 2.5rem;
     }
 
      .countdown h3 {
