@@ -44,8 +44,8 @@ body {
 
 .glass-bg {
     background: url('https://www.hackthebox.eu/images/landing/landing-pattern.png');
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
 }
 
 header {
@@ -138,6 +138,10 @@ a {
     justify-content: center;
 }
 
+.flex-center {
+    align-items: center;
+}
+
 .text-center {
     text-align: center;
 }
@@ -182,7 +186,7 @@ button {
 }
 
 .glass-bg .button {
-    background:  #f0f;
+    background:  #9296F0;
     color: var(--glassmorphism-bg);
     border: 1px solid transparent;
     transition: all 0.4s ease-in-out;
@@ -190,8 +194,8 @@ button {
 
 .glass-bg .button:hover {
     background:  transparent;
-    border: 1px solid #f0f;
-    color: #f0f;
+    border: 1px solid #9296F0;
+    color: #9296F0;
 }
 
 .glass-bg p {
@@ -218,7 +222,8 @@ button {
     visibility: hidden;
     height: 100vh;
     width: 100vw;
-    padding: 80px 20px;
+    margin-top: 3.5rem;
+    padding: 50px 20px;
     opacity: 0;
     z-index: 200;
     position: absolute;
@@ -265,7 +270,7 @@ button {
 
 .glass-bg .cards h3 {
     /*background: linear-gradient(to right bottom, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.1));*/
-    color: #778ca3;
+    color: #9296F0;
     background: rgba(255, 255, 255, 0.1);
     box-shadow: 20px 20px 50px rgba(0, 0, 0, 0.5);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
